@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Paint Services - Premium Painting & Yard Care in Virginia</title>
+    <link rel="icon" href="./img/logo.png">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #1a2332;
+            --gold: #d4af37;
+            --cream: #f8f5f0;
+            --dark-gold: #b8941f;
+            --light-navy: #2d3847;
+            --accent: #8b7355;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--navy);
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        /* Navbar Logo */
+        .navbar-logo {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-logo {
+                height: 30px;
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Sticky Navigation */
+        .navbar {
+            padding: 1.5rem 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 35, 50, 0.98) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold) !important;
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            position: relative;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            background: var(--dark-gold);
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--light-navy) 100%);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(212, 175, 55, 0.1) 100%);
+            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem 0;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-left: 5px solid var(--gold);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-subtitle {
+            color: var(--gold);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gold);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gold);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 3rem;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 0;
+            border: 1px solid #e5e5e5;
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .feature-description {
+            color: var(--accent);
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            background: var(--cream);
+            padding: 2rem;
+            position: relative;
+            transition: all 0.4s ease;
+            border-left: 4px solid var(--gold);
+        }
+
+        .service-item:hover {
+            background: var(--navy);
+            color: #ffffff;
+            transform: translateX(10px);
+        }
+
+        .service-item:hover .service-icon {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .service-item:hover .service-title,
+        .service-item:hover .service-list {
+            color: #ffffff;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            transition: all 0.4s ease;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            color: var(--accent);
+        }
+
+        .service-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gold);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+        }
+
+        .timeline-content {
+            background: #ffffff;
+            padding: 2rem;
+            border: 2px solid var(--gold);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            box-shadow: 0 0 0 10px var(--cream);
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .timeline-description {
+            color: var(--accent);
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.9) 0%, rgba(212, 175, 55, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-label {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--navy);
+            color: #ffffff;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        .contact-details p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 0;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--gold);
+            color: #ffffff;
+            box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0d1117;
+            color: #ffffff;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+            margin-right: 0.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                padding-left: 80px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                text-align: left;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-number {
+                left: 30px;
+                transform: translateY(-50%);
+            }
+
+            .navbar-nav .nav-link {
+                margin: 0.5rem 0;
+            }
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .gallery-item {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-up {
+            animation: fadeInUp 0.8s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="./img/logo.png" alt="Remova LLC Logo" class="navbar-logo">
+                LEGACY PAINT
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-card animate-up">
+                        <div class="hero-subtitle">Virginia's Premier Service</div>
+                        <h1 class="hero-title">Transform Your Space with Legacy Paint Services</h1>
+                        <p class="hero-description">
+                            Professional painting and comprehensive yard care solutions that enhance the beauty,
+                            functionality, and value of every property. Color built to last.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="#contact" class="btn btn-gold">
+                                <i class="fas fa-phone-alt me-2"></i>Get Free Estimate
+                            </a>
+                            <a href="#services" class="btn btn-outline-secondary"
+                                style="border-color: var(--gold); color: var(--gold);">
+                                View Services
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">8+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Satisfaction Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">Who We Are</h2>
+                    <p class="section-subtitle">Professional Excellence Since Day One</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--accent);">
+                        Legacy Paint Services is a professional company dedicated to enhancing properties through
+                        expert painting and comprehensive yard care. We specialize in transforming homes and
+                        commercial spaces, providing vibrant, well-maintained, and attractive environments.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--accent);">
+                        Our team combines experience, attention to detail, and reliable service to deliver results
+                        that property owners and managers can trust. Every property is treated with care and
+                        professionalism, as if it were our own.
+                    </p>
+                    <div class="mt-4">
+                        <h4 style="color: var(--gold); font-size: 1.3rem; margin-bottom: 1rem;">
+                            <i class="fas fa-shield-alt me-2"></i>Our Commitment to Safety
+                        </h4>
+                        <p style="color: var(--accent); line-height: 1.8;">
+                            Safety is a top priority at Legacy Paint Services. We ensure the protection of our team
+                            and every property through responsible procedures and safe practices. Owner Yunexy Rodríguez
+                            is always available by phone for any urgent situation or incident that requires immediate
+                            attention.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <h3 class="feature-title">Quality</h3>
+                                <p class="feature-description">
+                                    Impeccable results that exceed expectations every time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3 class="feature-title">Experience</h3>
+                                <p class="feature-description">
+                                    8 years of dedication transforming spaces successfully.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h3 class="feature-title">Professionalism</h3>
+                                <p class="feature-description">
+                                    Reliable and responsible service every time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3 class="feature-title">Care</h3>
+                                <p class="feature-description">
+                                    Every property treated as our own with dedication.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section" style="background: var(--cream);">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div style="border-left: 5px solid var(--gold); padding-left: 2rem;">
+                        <h3 style="font-size: 2.5rem; color: var(--navy); margin-bottom: 1.5rem;">
+                            <i class="fas fa-bullseye me-3" style="color: var(--gold);"></i>Our Mission
+                        </h3>
+                        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--accent);">
+                            To provide expert painting and yard care services that enhance the beauty,
+                            functionality, and value of every property.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="border-left: 5px solid var(--gold); padding-left: 2rem;">
+                        <h3 style="font-size: 2.5rem; color: var(--navy); margin-bottom: 1.5rem;">
+                            <i class="fas fa-eye me-3" style="color: var(--gold);"></i>Our Vision
+                        </h3>
+                        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--accent);">
+                            To become the preferred choice in Virginia for professional painting and
+                            comprehensive yard maintenance, recognized for quality, reliability, and care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-subtitle">Comprehensive Solutions for Your Property</p>
+            </div>
+            <div class="services-grid">
+                <!-- Painting Services -->
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3 class="service-title">Painting Services</h3>
+                    <ul class="service-list">
+                        <li>Interior painting (walls, ceilings, trim, baseboards)</li>
+                        <li>Exterior painting (siding, fascia, shutters, doors)</li>
+                        <li>Fence and deck painting or staining</li>
+                        <li>Cabinets refinishing and repainting</li>
+                        <li>Surface preparation (sanding, priming, caulking)</li>
+                        <li>Drywall repair and texture matching</li>
+                        <li>Color consultation and finish selection</li>
+                        <li>Small carpentry touch-ups prior to painting</li>
+                    </ul>
+                </div>
+
+                <!-- Yard & Lawn Care -->
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="service-title">Yard & Lawn Care</h3>
+                    <ul class="service-list">
+                        <li>Lawn mowing, edging, and blowing</li>
+                        <li>Hedge trimming, shrub shaping & bush removal</li>
+                        <li>Tree trimming and small tree removal</li>
+                        <li>Mulch installation, pine straw, rock bedding</li>
+                        <li>Flower bed cleaning, weeding & replanting</li>
+                        <li>Seasonal cleanups (spring / fall)</li>
+                        <li>Leaf removal and yard debris hauling</li>
+                        <li>Pressure washing (driveways, patios, decks, fences)</li>
+                        <li>Sod installation and lawn restoration</li>
+                    </ul>
+                </div>
+
+                <!-- Remodeling Services -->
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title">Remodeling & Maintenance</h3>
+                    <ul class="service-list">
+                        <li>Kitchen & bathroom cabinet installation</li>
+                        <li>Flooring installation</li>
+                        <li>Door installation and replacement</li>
+                        <li>Bathtub/shower installation</li>
+                        <li>Toilet installation</li>
+                        <li>Appliance installation</li>
+                        <li>Basic plumbing & electrical work</li>
+                        <li>Light fixtures & ceiling fans</li>
+                        <li>Emergency response services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section" style="background: var(--cream);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Process</h2>
+                <p class="section-subtitle">Simple Steps to Transform Your Space</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Initial Consultation</h3>
+                        <p class="timeline-description">
+                            Contact us for a free estimate. We'll discuss your project needs,
+                            preferences, and schedule a convenient time for assessment.
+                        </p>
+                    </div>
+                    <div class="timeline-number">1</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Property Assessment</h3>
+                        <p class="timeline-description">
+                            Our team visits your property to evaluate the scope of work,
+                            take measurements, and provide professional recommendations.
+                        </p>
+                    </div>
+                    <div class="timeline-number">2</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Detailed Proposal</h3>
+                        <p class="timeline-description">
+                            Receive a transparent, itemized quote with timeline estimates.
+                            We'll answer all your questions and adjust as needed.
+                        </p>
+                    </div>
+                    <div class="timeline-number">3</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Project Execution</h3>
+                        <p class="timeline-description">
+                            Our professional team completes the work with attention to detail,
+                            following all safety protocols and quality standards.
+                        </p>
+                    </div>
+                    <div class="timeline-number">4</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Final Inspection</h3>
+                        <p class="timeline-description">
+                            We conduct a thorough walkthrough with you to ensure complete
+                            satisfaction. Your approval is our priority.
+                        </p>
+                    </div>
+                    <div class="timeline-number">5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Before & After</h2>
+                <p class="section-subtitle">See Our Transformations</p>
+            </div>
+
+            <!-- Filtros de categoría -->
+            <div class="text-center mb-4">
+                <button class="btn btn-gold me-2 filter-btn active" data-filter="all">All Projects</button>
+                <button class="btn btn-gold me-2 filter-btn" data-filter="painting">Painting</button>
+                <button class="btn btn-gold me-2 filter-btn" data-filter="kitchen">Kitchen</button>
+                <button class="btn btn-gold me-2 filter-btn" data-filter="bathroom">Bathroom</button>
+                <button class="btn btn-gold me-2 filter-btn" data-filter="yard">Yard Care</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryContainer">
+                <!-- Item 1 -->
+                <div class="gallery-item" data-category="painting">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Interior Painting">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Interior Painting</div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gallery-item" data-category="kitchen">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Kitchen Renovation">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Kitchen Renovation</div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="gallery-item" data-category="painting">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Exterior Painting">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Exterior Painting</div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gallery-item" data-category="bathroom">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Bathroom Remodel">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Bathroom Remodel</div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="gallery-item" data-category="yard">
+                    <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Yard Landscaping">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Yard Landscaping</div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="gallery-item" data-category="kitchen">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Cabinet Refinishing">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Cabinet Refinishing</div>
+                    </div>
+                </div>
+
+                <!-- Continúa agregando más items con diferentes categorías... -->
+
+                <!-- Item 7 -->
+                <div class="gallery-item" data-category="painting">
+                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Wall Painting">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Wall Painting</div>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="gallery-item" data-category="bathroom">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Bathroom Tiles">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Bathroom Tiles</div>
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="gallery-item" data-category="yard">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Garden Landscaping">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Garden Landscaping</div>
+                    </div>
+                </div>
+
+                <!-- Item 10 -->
+                <div class="gallery-item" data-category="painting">
+                    <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Living Room Paint">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Living Room Paint</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" style="color: #ffffff;">Get In Touch</h2>
+                <p class="section-subtitle" style="color: var(--gold);">Free Estimates Available</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Owner</h4>
+                                <p>Yunexy Rodríguez</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p><a href="tel:804-605-6326"
+                                        style="color: #ffffff; text-decoration: none;">804-605-6326</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p><a href="mailto:legacypaintservices2025@gmail.com"
+                                        style="color: #ffffff; text-decoration: none; font-size: 0.9rem;">legacypaintservices2025@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Address</h4>
+                                <p>2612 Three Willows Ct<br>Henrico, VA 23294</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <h3 style="color: var(--gold); margin-bottom: 2rem; font-size: 2rem;">Find Us Here</h3>
+                        <div
+                            style="width: 100%; height: 500px; border: 3px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.8147580851846!2d-77.5123989!3d37.6194231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b11236f8f8f8f8%3A0x0!2s2612%20Three%20Willows%20Ct%2C%20Henrico%2C%20VA%2023294!5e0!3m2!1sen!2sus!4v1234567890"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <p style="color: #ffffff; font-size: 1.1rem; margin-bottom: 1rem;">
+                                <i class="fas fa-map-marker-alt me-2" style="color: var(--gold);"></i>
+                                <strong style="color: var(--gold);">Address:</strong> 2612 Three Willows Ct, Henrico, VA
+                                23294
+                            </p>
+                            <a href="https://www.google.com/maps/dir//2612+Three+Willows+Ct,+Henrico,+VA+23294"
+                                target="_blank" class="btn btn-gold">
+                                <i class="fas fa-directions me-2"></i>Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">LEGACY PAINT</div>
+                    <p class="footer-description">
+                        Professional painting and yard care services in Virginia.
+                        Transforming spaces with quality, experience, and professionalism.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 style="color: var(--gold); margin-bottom: 1.5rem;">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 style="color: var(--gold); margin-bottom: 1.5rem;">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#services">Interior Painting</a></li>
+                        <li><a href="#services">Exterior Painting</a></li>
+                        <li><a href="#services">Yard Care</a></li>
+                        <li><a href="#services">Remodeling</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 style="color: var(--gold); margin-bottom: 1.5rem;">Contact Info</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone me-2"></i> 804-605-6326</li>
+                        <li><i class="fas fa-envelope me-2"></i> legacypaintservices2025@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 2612 Three Willows Ct, Henrico, VA 23294</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Legacy Paint Services. All rights reserved. | Color Built to Last</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Esperar a que el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Sticky Navbar with background change on scroll
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarCollapse.classList.remove('show');
+                        }
+                    }
+                });
+            });
+
+            // Animate stats on scroll
+            const stats = document.querySelectorAll('.stat-number');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalValue = target.textContent;
+                        const number = parseInt(finalValue);
+                        const duration = 2000;
+                        const increment = number / (duration / 16);
+                        let current = 0;
+
+                        const updateNumber = () => {
+                            current += increment;
+                            if (current < number) {
+                                target.textContent = Math.floor(current) + (finalValue.includes('+') ? '+' : finalValue.includes('%') ? '%' : '');
+                                requestAnimationFrame(updateNumber);
+                            } else {
+                                target.textContent = finalValue;
+                            }
+                        };
+
+                        updateNumber();
+                        observer.unobserve(target);
+                    }
+                });
+            }, observerOptions);
+
+            stats.forEach(stat => observer.observe(stat));
+
+            // Filtros de categoría en galería
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remover active de todos los botones
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 10);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+
+        }); // Fin de DOMContentLoaded
+    </script>
+</body>
+
+</html>
