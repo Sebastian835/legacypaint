@@ -709,7 +709,19 @@
             transition: opacity 0.3s ease;
         }
 
+        .gallery-hidden {
+            display: none !important;
+        }
 
+        .gallery-navigation {
+            margin-top: 3rem;
+        }
+
+        #prevBtn:disabled,
+        #nextBtn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
         /* Animations */
         @keyframes fadeInUp {
@@ -1049,110 +1061,159 @@
                 <p class="section-subtitle">See Our Transformations</p>
             </div>
 
-            <!-- Filtros de categoría -->
-            <div class="text-center mb-4">
-                <button class="btn btn-gold me-2 filter-btn active" data-filter="all">All Projects</button>
-                <button class="btn btn-gold me-2 filter-btn" data-filter="painting">Painting</button>
-                <button class="btn btn-gold me-2 filter-btn" data-filter="kitchen">Kitchen</button>
-                <button class="btn btn-gold me-2 filter-btn" data-filter="bathroom">Bathroom</button>
-                <button class="btn btn-gold me-2 filter-btn" data-filter="yard">Yard Care</button>
-            </div>
-
             <div class="gallery-grid" id="galleryContainer">
-                <!-- Item 1 -->
+                <!-- Página 1 (items 1-12) -->
                 <div class="gallery-item" data-category="painting">
-                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Interior Painting">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Interior Painting</div>
-                    </div>
+                    <img src="./img/yarda1.png">
                 </div>
-
-                <!-- Item 2 -->
                 <div class="gallery-item" data-category="kitchen">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Kitchen Renovation">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Kitchen Renovation</div>
-                    </div>
+                    <img src="./img/yarda2.png">
                 </div>
-
-                <!-- Item 3 -->
                 <div class="gallery-item" data-category="painting">
-                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    <img src="./img/yarda3.png"
                         alt="Exterior Painting">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Exterior Painting</div>
-                    </div>
                 </div>
-
-                <!-- Item 4 -->
                 <div class="gallery-item" data-category="bathroom">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    <img src="./img/yarda4.png"
                         alt="Bathroom Remodel">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Bathroom Remodel</div>
-                    </div>
                 </div>
-
-                <!-- Item 5 -->
                 <div class="gallery-item" data-category="yard">
-                    <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    <img src="./img/yarda5.png"
                         alt="Yard Landscaping">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Yard Landscaping</div>
-                    </div>
                 </div>
-
-                <!-- Item 6 -->
                 <div class="gallery-item" data-category="kitchen">
                     <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Cabinet Refinishing">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Cabinet Refinishing</div>
-                    </div>
                 </div>
-
-                <!-- Continúa agregando más items con diferentes categorías... -->
-
-                <!-- Item 7 -->
                 <div class="gallery-item" data-category="painting">
                     <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Wall Painting">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Wall Painting</div>
-                    </div>
                 </div>
-
-                <!-- Item 8 -->
                 <div class="gallery-item" data-category="bathroom">
                     <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Bathroom Tiles">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Bathroom Tiles</div>
-                    </div>
                 </div>
-
-                <!-- Item 9 -->
                 <div class="gallery-item" data-category="yard">
                     <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Garden Landscaping">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Garden Landscaping</div>
-                    </div>
                 </div>
-
-                <!-- Item 10 -->
                 <div class="gallery-item" data-category="painting">
                     <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Living Room Paint">
-                    <div class="gallery-overlay">
-                        <div class="gallery-label">Living Room Paint</div>
-                    </div>
+                </div>
+                <div class="gallery-item" data-category="kitchen">
+                    <img src="./img/1.jpg" alt="Project 11">
+                </div>
+                <div class="gallery-item" data-category="painting">
+                    <img src="./img/2.jpg" alt="Project 12">
                 </div>
 
+                <!-- Página 2 (items 13-24) - OCULTOS POR DEFECTO -->
+                <div class="gallery-item gallery-hidden" data-category="bathroom">
+                    <img src="./img/3.jpg" alt="Project 13">
+                    <div class="gallery-overlay">
+                        <div class="gallery-label">Bathroom Update</div>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="yard">
+                    <img src="./img/4.jpg" alt="Project 14">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/5.jpg" alt="Project 15">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="kitchen">
+                    <img src="./img/6.jpg" alt="Project 16">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/7.jpg" alt="Project 17">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="bathroom">
+                    <img src="./img/8.jpg" alt="Project 18">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="yard">
+                    <img src="./img/9.jpg" alt="Project 19">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/10.jpg" alt="Project 20">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="kitchen">
+                    <img src="./img/11.jpg" alt="Project 21">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/12.jpg" alt="Project 22">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="bathroom">
+                    <img src="./img/13.jpg" alt="Project 23">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="yard">
+                    <img src="./img/14.jpg" alt="Project 24">
+                </div>
+
+                <!-- Página 3 (items 25-36) -->
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/15.jpg" alt="Project 25">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="kitchen">
+                    <img src="./img/16.jpg" alt="Project 26">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/17.jpg" alt="Project 27">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="bathroom">
+                    <img src="./img/18.jpg" alt="Project 28">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="yard">
+                    <img src="./img/19.jpg" alt="Project 29">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/20.jpg" alt="Project 30">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="kitchen">
+                    <img src="./img/21.jpg" alt="Project 31">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/22.jpg" alt="Project 32">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="bathroom">
+                    <img src="./img/23.jpg" alt="Project 33">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="yard">
+                    <img src="./img/24.jpg" alt="Project 34">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/25.jpg" alt="Project 35">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="kitchen">
+                    <img src="./img/26.jpg" alt="Project 36">
+                </div>
+
+                <!-- Página 4 (items 37-40+) -->
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/27.jpg" alt="Project 37">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="bathroom">
+                    <img src="./img/28.jpg" alt="Project 38">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="yard">
+                    <img src="./img/29.jpg" alt="Project 39">
+                </div>
+                <div class="gallery-item gallery-hidden" data-category="painting">
+                    <img src="./img/30.jpg" alt="Project 40">
+                </div>
             </div>
 
+            <!-- Controles de navegación -->
+            <div class="gallery-navigation text-center mt-5">
+                <button class="btn btn-gold me-3" id="prevBtn" style="padding: 1rem 2rem;">
+                    <i class="fas fa-arrow-left me-2"></i>Previous
+                </button>
+                <span id="pageInfo" style="font-size: 1.2rem; color: var(--navy); font-weight: 600; margin: 0 2rem;">
+                    Page <span id="currentPage">1</span> of <span id="totalPages">4</span>
+                </span>
+                <button class="btn btn-gold ms-3" id="nextBtn" style="padding: 1rem 2rem;">
+                    Next<i class="fas fa-arrow-right ms-2"></i>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -1284,6 +1345,68 @@
 
     <!-- Custom JavaScript -->
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const itemsPerPage = 12; // 3 columnas x 4 filas
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
+            let currentPage = 1;
+
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentPageSpan = document.getElementById('currentPage');
+            const totalPagesSpan = document.getElementById('totalPages');
+
+            // Actualizar total de páginas
+            totalPagesSpan.textContent = totalPages;
+
+            function showPage(page) {
+                // Ocultar todos los items
+                galleryItems.forEach(item => {
+                    item.classList.add('gallery-hidden');
+                });
+
+                // Calcular índices
+                const startIndex = (page - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+
+                // Mostrar items de la página actual
+                for (let i = startIndex; i < endIndex && i < galleryItems.length; i++) {
+                    galleryItems[i].classList.remove('gallery-hidden');
+                }
+
+                // Actualizar número de página
+                currentPageSpan.textContent = page;
+
+                // Actualizar estado de botones
+                prevBtn.disabled = (page === 1);
+                nextBtn.disabled = (page === totalPages);
+
+                // Scroll suave a la galería
+                document.getElementById('gallery').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            // Event listeners para botones
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    showPage(currentPage);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    showPage(currentPage);
+                }
+            });
+
+            // Mostrar primera página al cargar
+            showPage(1);
+        });
+
         // Esperar a que el DOM esté completamente cargado
         document.addEventListener('DOMContentLoaded', function () {
 
